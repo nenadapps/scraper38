@@ -65,8 +65,7 @@ def get_details(url, category):
     try:
         image_items = html.select('.img-thumbnail')
         for image_item in image_items:
-            img = image_item.get('src')
-            img = img.replace('/uploads/cache/httpwwwstampdencomuploads', 'http://www.stampden.com/uploads/').replace('jpg-800x800', '')
+            img = 'https://www.ipdastore.com' + image_item.get('src')
             if img not in images:
                 images.append(img)
     except:
