@@ -46,7 +46,7 @@ def get_details(url, category):
     try:
         raw_text_cont = html.find_all('div', attrs={'itemprop':'description'})[0]
         raw_text = raw_text_cont.get_text().strip()
-        stamp['raw_text'] = raw_text
+        stamp['raw_text'] = raw_text.replace('"',"'")
     except:
         stamp['raw_text'] = None  
         
